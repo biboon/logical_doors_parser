@@ -8,6 +8,10 @@ public class Interrupteur extends Composant {
     public Interrupteur(String s) {
         name = s;
     }
+    
+    public description() {
+        super.description() + " name: " + name;
+    }
 
     public void on() {
         etat = true;
