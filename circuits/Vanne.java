@@ -8,6 +8,10 @@ public class Vanne extends Composant {
     public Vanne(String s) {
         name = s;
     }
+    
+    public description() {
+        return this.description() + " name: " + name;
+    }
 
     public void setIn(Composant comp) {
         in1 = comp;
