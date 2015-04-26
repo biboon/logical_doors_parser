@@ -22,6 +22,7 @@ public class EquationCircuit extends Circuit {
         for (int i = 0; i < ins.size(); i++)
             if (interruptValues.get(i)) ins.get(i).on();
             else ins.get(i).off();
+        interruptValues = new ArrayList<Boolean> ();
     }
     
 }
