@@ -1,7 +1,7 @@
 grammar CircuitGram;
 
 @header { import circuits.*; }
-@members { EquationCircuit myCircuit = new EquationCircuit(); }
+@members { EquationCircuit myCircuit = new EquationCircuit("lel"); }
 
 main : 'eq_circuit' '('inlist')' 'returns' '('outlist')' eqlist 'end' cmdlist;
 
@@ -27,11 +27,14 @@ eqlist : eq | eq eqlist;
 
 bool : 'true' | 'false';
 
-boollist : bool | bool ',' boollist;
+boollist :
+  bool { myCircuit.interruptValues.add(new Boolean($bool.text)); }
+| bool ',' boollist { myCircuit.interruptValues.add(new Boolean($bool.text)); };
 
 cmd :
   'descr' '(' ')' { myCircuit.description(); }
-| 'eval' '(' boollist ')';
+| 'eval' '(' boollist ')' { myCircuit.eval(); }
+| 'state' '(' ')' { myCircuit.traceEtats(); };
 
 cmdlist : cmd | cmd cmdlist;
 

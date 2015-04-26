@@ -17,11 +17,13 @@ import java.io.IOException;
 
 public class Circuit {
 
-    private String nom;
-    private List<Composant> composants = new ArrayList<Composant>();
+    protected String nom;
+    protected List<Composant> composants = new ArrayList<Composant>();
     protected SondesTable tableSondes = new SondesTable();
     
-    public Circuit() {};
+    public Circuit(String nom) {
+        this.nom = nom;
+    };
 
     public Circuit(String nom, Composant[] cps) {
         this.nom = nom;
