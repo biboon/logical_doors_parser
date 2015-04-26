@@ -9,7 +9,7 @@ public class Interrupteur extends Composant {
         name = s;
     }
     
-    public description() {
+    public String description() {
         return super.description() + " name: " + name;
     }
 
