@@ -1,7 +1,7 @@
 grammar CircuitGram;
 
 @header { import circuits.*; }
-@members { EquationCircuit myCircuit = new EquationCircuit("lel"); }
+@members { EquationCircuit myCircuit = new EquationCircuit("Circuit"); }
 
 main : 'eq_circuit' '('inlist')' 'returns' '('outlist')' eqlist 'end' cmdlist;
 
